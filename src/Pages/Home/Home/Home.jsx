@@ -3,6 +3,8 @@ import Banner from './Banner/Banner'
 import HowItWorksSection from '../../../Components/HowItWorksSection/HowItWorksSection'
 import OurServicesSection from '../../../Components/OurServicesSection/OurServicesSection'
 import Brands from '../Brands/Brands'
+import FeaturesListSection from '../../../Components/FeaturesListSection/FeaturesListSection'
+import TestimonialsSection from '../../../Components/TestimonialsSection/TestimonialsSection'
 
 const Home = () => {
   return (
@@ -11,6 +13,8 @@ const Home = () => {
 <HowItWorksSection></HowItWorksSection>
 <OurServicesSection></OurServicesSection>
 <Brands></Brands>
+<FeaturesListSection></FeaturesListSection>
+<TestimonialsSection></TestimonialsSection>
     </div>
   )
 }
