@@ -52,6 +52,7 @@ import Register from "../Pages/Auth/Register/Register";
 import Login from "../Pages/Auth/Login/Login";
 import PrivateRoutes from "./PrivateRoutes";
 import Rider from "../Pages/Rider/Rider";
+import SendParcel from "../Pages/SendAParcel/SendParcel";
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: 'rider',
         element: <PrivateRoutes><Rider /></PrivateRoutes>
+      },
+      {
+        path: 'sendparcel',
+        element: <PrivateRoutes><SendParcel/></PrivateRoutes>
       }
     ]
   },
@@ -72,7 +77,7 @@ export const router = createBrowserRouter([
     Component: AuthLayout,
     children: [
       { path: 'login', Component: Login },
-      { path: 'register', Component: Register }
+      { path: 'register', Component: Register },
       // এখান থেকে rider সরিয়ে ফেলা হয়েছে
     ]
   }
