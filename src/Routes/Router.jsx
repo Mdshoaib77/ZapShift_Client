@@ -53,6 +53,8 @@ import Login from "../Pages/Auth/Login/Login";
 import PrivateRoutes from "./PrivateRoutes";
 import Rider from "../Pages/Rider/Rider";
 import SendParcel from "../Pages/SendAParcel/SendParcel";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import MyParcels from "../Pages/Dashoboard/MyParcels/MyParcels";
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +81,16 @@ export const router = createBrowserRouter([
       { path: 'login', Component: Login },
       { path: 'register', Component: Register },
       // এখান থেকে rider সরিয়ে ফেলা হয়েছে
+    ]
+  },
+  {
+    path: 'dashboard',
+    element: <PrivateRoutes><DashboardLayout></DashboardLayout></PrivateRoutes>,
+    children: [
+      {
+        path: 'my-parcels',
+        Component: MyParcels
+      }
     ]
   }
 ]);
