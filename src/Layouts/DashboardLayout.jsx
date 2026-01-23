@@ -108,6 +108,66 @@ const DashboardLayout = () => {
                 <span className="is-drawer-close:hidden">My Parcels</span>
               </NavLink>
             </li>
+            <li>
+              <NavLink 
+                to="/dashboard/payment-history"
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right" 
+                data-tip="payment-history"
+              >
+                {/* Delivery Van Icon (SVG) */}
+                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="my-1.5 inline-block size-4">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg> */}
+                <svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  className="my-1.5 inline-block size-4"
+>
+  <path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z" />
+  <line x1="9" y1="7" x2="15" y2="7" />
+  <line x1="9" y1="11" x2="15" y2="11" />
+  <line x1="9" y1="15" x2="13" y2="15" />
+</svg>
+
+                <span className="is-drawer-close:hidden">Payments History</span>
+              </NavLink>
+            </li>
+
+
+           <li>
+  <NavLink 
+    to="/dashboard/approve-riders"
+    className="is-drawer-close:tooltip is-drawer-close:tooltip-right" 
+    data-tip="approve-riders"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="my-1.5 inline-block size-4"
+    >
+      {/* Rider/Person icon */}
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" />
+      <path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
+      <path d="M10 18l4 0" />
+    </svg>
+
+    <span className="is-drawer-close:hidden">Approve Riders</span>
+  </NavLink>
+</li>
+
 
             {/* Settings item */}
             <li>

@@ -835,10 +835,12 @@ import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../Hooks/useAxiosSecure'; 
 import useAuth from '../../Hooks/useAuth'; // change: useAuth import
+import { useNavigate } from 'react-router';
 
 const SendParcel = () => {
   const { user } = useAuth(); // change: get user
   const axiosSecure = useAxiosSecure();
+  const navigate = useNavigate();
 
   const bdRegions = {
     Dhaka: ["Dhaka", "Faridpur", "Gazipur", "Gopalganj", "Kishoreganj", "Madaripur", "Manikganj", "Munshiganj", "Narayanganj", "Narsingdi", "Rajbari", "Shariatpur", "Tangail"],
@@ -921,16 +923,17 @@ const SendParcel = () => {
       showCancelButton: true,
       confirmButtonColor: '#003d3d',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, Confirm!',
+      confirmButtonText: 'Yes, Confirm & Continue payment!',
       cancelButtonText: 'No, Cancel'
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.post('/parcels', finalParcelData)
           .then(res => {
             if (res.data.insertedId) {
+              navigate('/dashboard/my-parcels')
               Swal.fire({
                 title: 'Success!',
-                text: 'Your parcel has been booked successfully.',
+                text: 'Your parcel has been booked successfully.Please Pay',
                 icon: 'success',
                 confirmButtonColor: '#003d3d'
               });
